@@ -1,27 +1,61 @@
+import React, { useState } from "react";
 import Display from "./components/Display";
 import ButtonsContainer from "./components/ButtonsContainer";
 import styles from "./App.module.css";
-import { useState } from "react";
 
 function App() {
   const [calVal, setCalVal] = useState("");
 
   const onButtonClick = (buttonText) => {
-    if (buttonText === "AC") {
-      setCalVal("");
-    } else if (buttonText === "=") {
-      const result = eval(calVal);
-      setCalVal(result);
-    } else {
-      const newDisplayValue = calVal + buttonText;
-      setCalVal(newDisplayValue);
+    switch (buttonText) {
+      case "AC":
+        setCalVal(""); // Clear the display
+        break;
+      case "DEL":
+        setCalVal(calVal.slice(0, -1)); // Delete the last character
+        break;
+      case "=":
+        try {
+          const result = eval(calVal); // Evaluate the expression
+          setCalVal(result);
+        } catch {
+          setCalVal("Error"); // Handle invalid expressions
+        }
+        break;
+      case "%":
+        try {
+          const result = eval(calVal + "/100"); // Calculate percentage
+          setCalVal(result);
+        } catch {
+          setCalVal("Error");
+        }
+        break;
+      case "^2":
+        try {
+          const result = Math.pow(eval(calVal), 2); // Square the current value
+          setCalVal(result);
+        } catch {
+          setCalVal("Error");
+        }
+        break;
+      case "√":
+        try {
+          const result = Math.sqrt(eval(calVal)); // Calculate square root
+          setCalVal(result);
+        } catch {
+          setCalVal("Error");
+        }
+        break;
+      default:
+        // Append the buttonText to the current value
+        setCalVal(calVal + buttonText);
     }
   };
 
   return (
     <div className={styles.calculator}>
-      <Display displayValue={calVal}></Display>
-      <ButtonsContainer onButtonClick={onButtonClick}></ButtonsContainer>
+      <Display displayValue={calVal} />
+      <ButtonsContainer onButtonClick={onButtonClick} />
     </div>
   );
 }
