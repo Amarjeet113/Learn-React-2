@@ -1,7 +1,18 @@
-.calculator{
-  border: 1px solid rgb(91, 89, 89);
-  width: 200px;
-  border-radius: 5px;
+.calculator {
+  width: 400px;
+  margin: 100px auto; /* Center the calculator on the page */
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
+@media (max-width: 500px) {
+  .calculator {
+    width: 90%;
+    margin: 50px auto;
+  }
+}
