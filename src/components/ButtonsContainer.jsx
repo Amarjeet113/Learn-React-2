@@ -4,24 +4,24 @@ const ButtonsContainer = ({ onButtonClick }) => {
   const buttonNames = [
     "AC", // Clear All
     "DEL", // Delete (new)
-    "1",
-    "2",
-    "+",
-    "3",
-    "4",
-    "5",
-    "-",
-    "6",
+    "%",
+    "/",
     "7",
     "8",
-    "*",
-    "/",
-    "=",
     "9",
+    "x",
+    "4",
+    "5",
+    "6",
+    "-",
+    "1",
+    "2",
+    "3",
+    "x²",
     "0",
     ".",
     "%", // Percentage (new)
-    "x²", // Square (new)
+    "=", // Square (new)
     "√", // Square Root (new)
   ];
 
