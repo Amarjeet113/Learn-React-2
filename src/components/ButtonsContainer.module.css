@@ -1,10 +1,46 @@
-.buttonsContainer{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.buttonsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+  gap: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.button{
-  width: 45px;
-  height: 45px;
-  margin: 3px;
+
+.button {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.button:active {
+  transform: scale(0.98); /* Slightly reduce size on click for a "press" effect */
+}
+
+.button:hover {
+  background-color: #d3d3d3; /* Change color slightly on hover */
+}
+
+.button:nth-child(4n) { /* Special styling for operators */
+  background-color: #f29b38;
+  color: white;
+}
+
+.button:nth-child(4n):hover {
+  background-color: #e88b22;
+}
+
+.button:nth-child(13) { /* Special styling for the "=" button */
+  background-color: #5cb85c;
+  color: white;
+}
+
+.button:nth-child(13):hover {
+  background-color: #4cae4c;
 }
