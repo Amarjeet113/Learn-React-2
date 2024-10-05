@@ -2,10 +2,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
   gap: 10px;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 100%;
 }
 
 .button {
@@ -20,14 +18,14 @@
 }
 
 .button:active {
-  transform: scale(0.98); /* Slightly reduce size on click for a "press" effect */
+  transform: scale(0.98); /* Slightly shrink on click */
 }
 
 .button:hover {
-  background-color: #d3d3d3; /* Change color slightly on hover */
+  background-color: #d3d3d3; /* Slight hover effect */
 }
 
-.button:nth-child(4n) { /* Special styling for operators */
+.button:nth-child(4n) { /* Style for operator buttons (e.g., +, -, *, /) */
   background-color: #f29b38;
   color: white;
 }
@@ -36,7 +34,7 @@
   background-color: #e88b22;
 }
 
-.button:nth-child(13) { /* Special styling for the "=" button */
+.button:nth-child(13) { /* Special style for the "=" button */
   background-color: #5cb85c;
   color: white;
 }
